@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../Downloads/bloom_marketplace_test_automation"
+		},
+		{
+			"path": "../Cypress aoutomation"
+		}
+	],
+	"settings": {
+		"files.autoSave": "onFocusChange"
+	}
+}
