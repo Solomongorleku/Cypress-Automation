@@ -2,7 +2,7 @@ reports/*.json
 venv
 geckodriver.log
 .idea
-node_modules
+node_modules/*
 
 cypress/videos/*
 !/cypress/videos/*.md
