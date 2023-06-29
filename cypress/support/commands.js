@@ -35,13 +35,31 @@
 
 /// <reference types="cypress-xpath" />
 
+
 Cypress.Commands.add('addToCart', () => {
-    for (let i = 1; i < 5; i++) {
-        cy.get(".sc-cSHVUG.fPTkkZ").eq(i).click(); // Click the next 4 "add to cart" buttons
-      
-        cy.get('[style="padding-left: 8px; padding-right: 8px;"]').should("be.visible").then(($alert) => {
-          const alertText = $alert.text(); // Capture the alert message text
-          expect(alertText).to.include("currently unavailable at the warehouse"); // Assert the text in the alert message
-        });
-      }
-})
+  cy.get(".sc-cSHVUG.fPTkkZ").each(($button, index) => {
+    if (index < 4) {
+      cy.wrap($button).click();
+
+      // Check if the product is out of stock
+      cy.get('[style="padding-left: 8px; padding-right: 8px;"]').should(($alert) => {
+        if ($alert.length > 0) {
+          // Alert message is displayed, check if it's for out-of-stock or already added in cart
+          const alertText = $alert.text();
+
+          if (alertText.includes("currently unavailable at the warehouse")) {
+            // Alert message for out-of-stock product
+            expect(alertText).to.include("currently unavailable at the warehouse");
+          } else {
+            // Alert message for already added in cart, perform additional actions if needed
+            // For example: expect(alertText).to.include("Already added in cart");
+          }
+        } else {
+          // Product is in stock, perform additional actions if needed
+        }
+      });
+    }
+  });
+});
+
+

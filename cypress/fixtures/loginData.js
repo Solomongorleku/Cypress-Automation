@@ -3,5 +3,13 @@ export const userDetails = {
     username: "solo_stg",
     password: "solo_stg",
   };
+
+
+  export const userDetailstest = {
+    url: "https://bloom.test.mpharma.com/",
+    username: "uitester",
+    password: "uitester",
+  };
+  
   
   

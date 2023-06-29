@@ -33,7 +33,7 @@ describe('Create new order in Marketplace', () => {
         cy.get("div.sc-ifAKCX input").click();
         cy.get("div.sc-ifAKCX input").type("3");
         cy.get("div.sc-ifAKCX button").click();
-        cy.get("[data-testid='closeIcon']").first().click();
+        cy.get("[data-testid='closeIcon']").first().click().wait(5000);
     })
 
     it('Adds several products to cart', () => {
