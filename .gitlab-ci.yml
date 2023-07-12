@@ -9,6 +9,7 @@ cypress:
     - echo "Running pipeline..."
     #  install dependencies
     - npm install
+    - npm install --save-dev cypress
 
     # - npx browserslist@latest --update-db
     # start the server in the background
