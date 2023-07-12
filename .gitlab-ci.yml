@@ -1,9 +1,16 @@
+variables:
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+
 stages:
   - test
 
 cypress:
   stage: test
   # image: cypress/browsers:node14.15.0-chrome86-ff82
+  cache:
+    paths:
+      - node_modules/
+      - cache/Cypress/
   image: cypress/base:16.13.0
   script:
     - echo "Running pipeline..."
