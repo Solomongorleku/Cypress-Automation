@@ -65,13 +65,13 @@ Cypress.Commands.add('addToCart', () => {
 });
 
 Cypress.Commands.add('generateRandomFirstName', () => {
-  const randomFirstNames = ['John', 'Jane', 'Alice', 'Bob', 'David', 'Emma', 'Michael'];
+  const randomFirstNames = ['Joh', 'Jane', 'Alice', 'Bob', 'David', 'Emma', 'Michael', 'Misty', 'Icy', 'Blue'];
   const randomIndex = Cypress._.random(0, randomFirstNames.length - 1);
   return randomFirstNames[randomIndex];
 });
 
 Cypress.Commands.add('generateRandomLastName', () => {
-  const randomLastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Miller'];
+  const randomLastNames = ['Smith', 'John', 'William', 'Brown', 'Jones', 'Miller', 'Silent', 'Snow', 'Flor' ];
   const randomIndex = Cypress._.random(0, randomLastNames.length - 1);
   return randomLastNames[randomIndex];
 });
