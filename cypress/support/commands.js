@@ -31,6 +31,8 @@
 //       }
 //     })
 
+import '@testing-library/cypress/add-commands'
+
 /// <reference types="Cypress" />
 
 /// <reference types="cypress-xpath" />
@@ -61,5 +63,23 @@ Cypress.Commands.add('addToCart', () => {
     }
   });
 });
+
+Cypress.Commands.add('generateRandomFirstName', () => {
+  const randomFirstNames = ['John', 'Jane', 'Alice', 'Bob', 'David', 'Emma', 'Michael'];
+  const randomIndex = Cypress._.random(0, randomFirstNames.length - 1);
+  return randomFirstNames[randomIndex];
+});
+
+Cypress.Commands.add('generateRandomLastName', () => {
+  const randomLastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Miller'];
+  const randomIndex = Cypress._.random(0, randomLastNames.length - 1);
+  return randomLastNames[randomIndex];
+});
+
+Cypress.Commands.add('generateRandomPhoneNumber', () => {
+  const randomNumber = Math.floor(1000000000 + Math.random() * 9000000000); // Random 10-digit number
+  return '0' + randomNumber.toString().slice(1); // Format as phone number with country code
+});
+
 
 
