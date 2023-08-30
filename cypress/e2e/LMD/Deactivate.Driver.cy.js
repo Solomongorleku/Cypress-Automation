@@ -6,14 +6,14 @@ const { url } = userDetailstest;
 
 
 
-describe('Add Driver', () => {
+describe('Deactivate Driver', () => {
       
     before(() => {
         cy.clearCookies()
         cy.loginLMD(username, password);
     });
     
-    it('Adds a New Driver', () => {
+    it('Deactivates a New Driver', () => {
         cy.generateRandomFirstName().then((firstName) => {
         cy.generateRandomLastName().then((lastName) => {
         cy.generateRandomPhoneNumber().then((phoneNumber) => {

@@ -8,7 +8,7 @@ let { driver } = searchValue;
 
 
 
-describe('Search Delivery', () => {
+describe('Assign Driver to Delivery', () => {
       
     before(() => {
         cy.clearCookies()

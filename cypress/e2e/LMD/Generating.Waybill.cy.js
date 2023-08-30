@@ -5,7 +5,7 @@ const { username, password } = userDetailstest;
 
 
 
-describe('Search Delivery', () => {
+describe('Generating Waybill', () => {
       
     before(() => {
         cy.clearCookies()
